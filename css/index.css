@@ -8,45 +8,55 @@
 .box-content {
     width: 200px;
     height: 200px;
-    margin: 3em auto 10em;
+    margin: 10em auto 10em;
     /*表示所有子元素在3D空间中呈现。*/
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     position: relative;
     /* infinite   规定动画应该无限次播放 */
     /* linear  线性过度*/
-    /* animation: rotate 10s infinite linear; */
-    animation: rotate 10s infinite alternate;
+    animation: rotate 8s infinite linear;
+    /* animation: rotate 10s infinite alternate; */
     /* alternate   动画应该轮流反向播放 */
+    /* transform: rotateX(20deg); */
 }
+
+
+
 
 @keyframes rotate {
     0% {
-        transform: rotateX(-10deg) rotateY(0deg)
+        transform:
+            /* rotateX(-100deg)  */
+            rotateY(0deg) rotateX(-20deg);
     }
 
     50% {
-        transform: rotateX(-10deg) rotateY(180deg)
+        transform:
+            /* rotateX(-10deg)  */
+            rotateY(180deg) rotateX(-20deg);
     }
 
     100% {
-        transform: rotateX(-10deg) rotateY(360deg)
+        transform:
+            /* rotateX(-10deg) */
+            rotateY(360deg) rotateX(-20deg);
     }
 }
 
-@-webkit-keyframes rotate {
+/* @-webkit-keyframes rotate {
     0% {
-        -webkit-transform: rotateX(-10deg) rotateY(0deg)
+        -webkit-transform: rotateX(-10deg) rotateY(0deg) rotateX(-25deg)
     }
 
     50% {
-        -webkit-transform: rotateX(-10deg) rotateY(180deg)
+        -webkit-transform: rotateX(-10deg) rotateY(180deg) rotateX(-25deg)
     }
 
     100% {
-        -webkit-transform: rotateX(-10deg) rotateY(360deg)
+        -webkit-transform: rotateX(-10deg) rotateY(360deg) rotateX(-25deg)
     }
-}
+} */
 
 .box-content div img {
     width: 100%;
@@ -64,6 +74,8 @@
 .box-content div[class^="l"] {
     width: 200px;
     height: 200px;
+    opacity: 0.7;
+    /* opacity: 1; */
     top: 0;
 }
 
@@ -71,7 +83,7 @@
 .box-content div[class^="m"] {
     width: 150px;
     height: 150px;
-    opacity: 0;
+    opacity: 1;
     top: 30px;
 }
 
@@ -93,6 +105,19 @@
 
 .box-content:hover div[class^="s"] {
     opacity: 1;
+}
+
+/* 上方元素 */
+.box-content .l-bead {
+    transform: translateY(-100px) rotateX(90deg);
+    -webkit-transform: translateY(-100px) rotateX(90deg);
+    /* display: none; */
+}
+
+/* 下方元素 */
+.box-content .l-body {
+    transform: translateY(100px) rotateX(90deg);
+    -webkit-transform: translateY(100px) rotateX(90deg);
 }
 
 /* 前方元素 */
@@ -118,6 +143,39 @@
 .box-content div[class*="right"] {
     transform: translateX(100px) rotateY(90deg);
     -webkit-transform: translateX(100px) rotateY(90deg);
+}
+
+/* 中间盒子元素 */
+.wrap-box .box-content .middle-f {
+    transform: translateZ(75px) translateX(20px);
+    -webkit-transform: translateZ(75px) translateX(25px);
+}
+
+.wrap-box .box-content .middle-l {
+    transform: translateX(-50px) rotateY(-90deg);
+    -webkit-transform: translateX(-50px) rotateY(-90deg);
+}
+
+.wrap-box .box-content .middle-b {
+    transform: translateZ(-75px) translateX(25px);
+    -webkit-transform: translateZ(-75px) translateX(25px);
+}
+
+.wrap-box .box-content .middle-r {
+    transform: translateX(100px) rotateY(90deg);
+    -webkit-transform: translateX(100px) rotateY(90deg);
+}
+
+/* 上方散开 */
+.box-content:hover div.l-bead {
+    transform: translateY(-150px) rotateX(90deg);
+    -webkit-transform: translateY(-150px) rotateX(90deg);
+}
+
+/* 下方散开 */
+.box-content:hover div.l-body {
+    transform: translateY(150px) rotateX(90deg);
+    -webkit-transform: translateY(150px) rotateX(90deg);
 }
 
 /* 前方散开 */
