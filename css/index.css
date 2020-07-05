@@ -8,7 +8,7 @@
 .box-content {
     width: 200px;
     height: 200px;
-    margin: 10em auto 10em;
+    margin: 16em auto 10em;
     /*表示所有子元素在3D空间中呈现。*/
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
@@ -18,7 +18,7 @@
     animation: rotate 8s infinite linear;
     /* animation: rotate 10s infinite alternate; */
     /* alternate   动画应该轮流反向播放 */
-    /* transform: rotateX(20deg); */
+    transform: rotateX(20deg) rotateY(-20deg);
 }
 
 
@@ -26,37 +26,31 @@
 
 @keyframes rotate {
     0% {
-        transform:
-            /* rotateX(-100deg)  */
-            rotateY(0deg) rotateX(-20deg);
+        transform: rotateX(20deg) rotateY(0deg);
     }
 
     50% {
-        transform:
-            /* rotateX(-10deg)  */
-            rotateY(180deg) rotateX(-20deg);
+        transform: rotateX(20deg) rotateY(180deg);
     }
 
     100% {
-        transform:
-            /* rotateX(-10deg) */
-            rotateY(360deg) rotateX(-20deg);
+        transform: rotateX(20deg) rotateY(360deg);
     }
 }
 
-/* @-webkit-keyframes rotate {
+@-webkit-keyframes rotate {
     0% {
-        -webkit-transform: rotateX(-10deg) rotateY(0deg) rotateX(-25deg)
+        -webkit-transform: rotateX(20deg) rotateY(0deg);
     }
 
     50% {
-        -webkit-transform: rotateX(-10deg) rotateY(180deg) rotateX(-25deg)
+        -webkit-transform: rotateX(20deg) rotateY(180deg);
     }
 
     100% {
-        -webkit-transform: rotateX(-10deg) rotateY(360deg) rotateX(-25deg)
+        -webkit-transform: rotateX(20deg) rotateY(360deg);
     }
-} */
+}
 
 .box-content div img {
     width: 100%;
